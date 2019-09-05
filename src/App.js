@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Style from './index.css';
 import ReactDOM from 'react-dom';
-import SearchDrink from './searchbar';
+import SearchDrink from './searchDrink';
 import SearchBarCat from './searchBarCat';
 import SearchPrice from './searchPrice';
 import BarSearch from './barSearch';
@@ -59,10 +59,12 @@ class App extends Component {
       console.log(e.target.name)
       e.preventDefault();
       this.setState({[e.target.name]: true})
-      //console.log("target name"   + [e.elements.name] + " " + e.target.value);
+      this.fetchAPI();
     }
 
     updateInput = (e) => {
+      console.log(`target name update` + e.target.name)
+      console.log(`target value update` + e.target.value)
       this.setState({
         [e.target.name]: e.target.value,
       })
@@ -71,7 +73,7 @@ class App extends Component {
     render() {
       if(this.state.search_drink===true){
         return(
-          <SearchDrink drink_name={this.state.drink_name}/>
+          <SearchDrink state={this.state}/>
         )
       }
       else if(this.state.search_bar===true){
@@ -116,19 +118,18 @@ class App extends Component {
                   <div> 
                     <center><h3>Search By Bar</h3></center>
                     <Form name="search_bar" onSubmit={this.addValue}>              
-                      <Form.Group bar_search="formBarSearch">
+                      <Form.Group bar_search="formBarSearch">    
                         <Form.Control type="text" name="bar_name" placeholder="Enter Name of Bar"  onChange={this.updateInput}/>
                         <p></p>
                         <center><Button variant="primary" type="submit">Submit</Button></center>
                       </Form.Group>
-            </Form>
-            <br></br>
+                    </Form>
+                    <br></br>
                   </div>
                 </Col>
                 <Col></Col>
               </Row>
             </Container>
-            <br></br>
             <Container>
               <Row>
                 <Col></Col>
