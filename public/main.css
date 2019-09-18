@@ -1,0 +1,60 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #5d4954;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo{
+    color: rgb(220,220,200);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 22px;
+    padding-left: 30px;
+}
+
+.nav-links{
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+}
+
+.nav-links li{
+    list-style: none;
+}
+
+.nav-links a{
+    color: rgb(220,220,200);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    align-items: center;
+}
+
+.burger{
+    display: none;
+}
+
+.burger div{
+    width: 30px;
+    height: 3px;
+    background-color: rgb(220,220,200);
+    margin: 5px;
+}
+
+
+@media screen and (max-width:1024px){
+    .nav-links{
+        width: 60%;
+    }
+}
+

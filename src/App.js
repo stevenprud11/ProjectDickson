@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Style from './index.css';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import SearchDrink from './searchDrink';
 import SearchBarCat from './searchBarCat';
 import SearchPrice from './searchPrice';
@@ -42,6 +43,7 @@ class App extends Component {
         search_bar_cat: false,
         search_price: false,
         search_bar: false,
+        history: '',
         //styles: { width: '700px', }
     }
 
@@ -70,6 +72,39 @@ class App extends Component {
       })
     }
 
+    createNav = () => {
+      return(
+        <div>
+          <Router>
+          <nav>
+              <div class="logo mr-auto">
+                <h4>The Nav</h4>
+              </div>
+              <ul class="nav-links">
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+                <li>
+                    <Link to="/">Search</Link>
+                </li>
+                <li>
+                    <Link to="/">Drink</Link>
+                </li>
+                <li>
+                    <Link to="/">Category</Link>
+                </li>
+                <li>
+                    <Link to="/">Price</Link>
+                </li>
+              </ul>
+            </nav>
+            {/* <Route exact path="/" component={App}/> */}
+
+            </Router>
+        </div>
+      )
+    }
+
     render() {
       if(this.state.search_drink===true){
         return(
@@ -94,23 +129,9 @@ class App extends Component {
       else{
         return (
           <div>
-            <Navbar bg="dark" variant="dark">
-              <Navbar.Brand href="#home">Project Dickson</Navbar.Brand>
-              <Nav className="searches">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#search-bars">Search Bars</Nav.Link>
-                <Nav.Link href="#search-by-category">Search by Category</Nav.Link>
-                <Nav.Link href="#search-by-price">Search by Price</Nav.Link>
-              </Nav>
-              <br></br>
-              <ul class="ml-auto">
-              <Form inline class="ml-auto">
-                <Form.Control type="text" placeholder="Search" className="global-search"/>
-                <Button variant="outline-info">Search</Button>
-              </Form>
-              </ul>
-            </Navbar>
+            {this.createNav()}
             <br></br>
+
             <Container>
               <Row>
                 <Col></Col>
