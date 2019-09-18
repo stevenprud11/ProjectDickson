@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    
 }
 
 nav{
@@ -9,12 +10,14 @@ nav{
     justify-content: space-around;
     align-items: center;
     min-height: 8vh;
-    background-color: #5d4954;
+    background-color: #5d5c61;
     font-family: 'Poppins', sans-serif;
 }
 
 .logo{
     color: rgb(220,220,200);
+    background: transparent;
+    background-color: transparent;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-size: 22px;
@@ -40,16 +43,37 @@ nav{
     align-items: center;
 }
 
-.burger{
-    display: none;
+
+.render{
+    background-color: rgb(220,220,220);
 }
 
-.burger div{
-    width: 30px;
-    height: 3px;
-    background-color: rgb(220,220,200);
-    margin: 5px;
+.text_box{
+    text-align: center;
+    width: 600px;
+    height: 35px;
 }
+
+.search_title{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20;
+    
+}
+
+.card{
+    height: max-content;
+    background-color: #b1a296;
+    padding: 1px;
+}
+
+.card-title{
+    font-family: 'Poppins', sans-serif;
+}
+.card-info{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14;
+}
+
 
 
 @media screen and (max-width:1024px){

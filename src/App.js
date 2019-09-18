@@ -78,7 +78,7 @@ class App extends Component {
           <Router>
           <nav>
               <div class="logo mr-auto">
-                <h4>The Nav</h4>
+                <h4>Project Dickson</h4>
               </div>
               <ul class="nav-links">
                 <li>
@@ -105,6 +105,27 @@ class App extends Component {
       )
     }
 
+    createBarSearch = () => {
+      return(
+        <div class="search">
+              <div> 
+                <center><h3 class="search_title">Search By Bar</h3></center>
+                <Form name="search_bar" onSubmit={this.addValue}>
+                    <center>
+                    <input class="text_box" type="text" name="bar_name" placeholder="Enter Name of Bar"  onChange={this.updateInput}/>
+                    </center>    
+                    <p></p>
+                    <center><Button variant="primary" type="submit">Submit</Button></center>
+                </Form>
+                <br></br>
+              </div>
+      </div>
+      )
+    }
+
+
+    
+
     render() {
       if(this.state.search_drink===true){
         return(
@@ -128,29 +149,11 @@ class App extends Component {
       }
       else{
         return (
-          <div>
+          <div class="render">
             {this.createNav()}
             <br></br>
+            {this.createBarSearch()}
 
-            <Container>
-              <Row>
-                <Col></Col>
-                <Col xs={8}> 
-                  <div> 
-                    <center><h3>Search By Bar</h3></center>
-                    <Form name="search_bar" onSubmit={this.addValue}>              
-                      <Form.Group bar_search="formBarSearch">    
-                        <Form.Control type="text" name="bar_name" placeholder="Enter Name of Bar"  onChange={this.updateInput}/>
-                        <p></p>
-                        <center><Button variant="primary" type="submit">Submit</Button></center>
-                      </Form.Group>
-                    </Form>
-                    <br></br>
-                  </div>
-                </Col>
-                <Col></Col>
-              </Row>
-            </Container>
             <Container>
               <Row>
                 <Col></Col>
@@ -170,6 +173,10 @@ class App extends Component {
                 <Col></Col>
               </Row>
             </Container>
+
+
+
+
             <Container>
               <Row>
                 <Col></Col>
@@ -189,6 +196,9 @@ class App extends Component {
                 <Col></Col>
               </Row>
             </Container>
+
+
+
             <Container>
               <Row>
                 <Col></Col>
@@ -209,23 +219,30 @@ class App extends Component {
                   <Col></Col>
                 </Row>
               </Container>
+
+
+
             <Container>
               <center><h3>Bar List</h3></center>
                 <Row>
                   <Col> </Col>
                     <Col xs={10}>
                         {this.state.list.map((bar) => (
-                                    <div className="card">
+                                    <div className="card"> 
                                     <div className="card-body">
                                         <h5 className="card-title">{bar.bar_name}</h5>
-                                        <h6 className="card-url">{bar.location}</h6>
+                                        <h6 className="card-info">{bar.location}</h6>
                                     </div>
-                                    </div>  
+                                    </div>
+                                    
                         ))}
                     </Col>
                 <Col> </Col>
               </Row>
             </Container>
+
+
+
             <Container>
                 <Row>
                   <Col></Col>
