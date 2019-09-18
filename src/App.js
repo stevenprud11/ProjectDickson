@@ -123,8 +123,70 @@ class App extends Component {
       )
     }
 
+    createDrinkSearch = () => {
+      return(
+        <div class="search">
+          <div> 
+            <center><h3 class="search_title">Search By Drink</h3></center>
+            <Form name="search_drink" onSubmit={this.addValue}>
+                <center>
+                <input class="text_box" type="text" name="drink_name" placeholder="Enter Name of Drink"  onChange={this.updateInput}/>
+                </center>    
+                <p></p>
+                <center><Button variant="primary" type="submit">Submit</Button></center>
+            </Form>
+            <br></br>
+          </div>
+        </div>
+      )
+    }
 
-    
+    createCatSearch = () => {
+      return (
+        <div class="search">
+          <div> 
+            <center><h3 class="search_title">Search By Category and Bar</h3></center>
+            <Form name="search_bar_cat" onSubmit={this.addValue}>
+                <center>
+                <input class="text_box" type="text" name="category" placeholder="Enter Category of Drink"  onChange={this.updateInput}/>
+                </center> 
+                <p></p>
+                <center>
+                <input class="text_box" type="text" name="bar_name" placeholder="Enter Name of Bar"  onChange={this.updateInput}/>
+                </center>     
+                <p></p>
+                <center><Button variant="primary" type="submit">Submit</Button></center>
+            </Form>
+            <br></br>
+          </div>
+        </div>
+      )
+    }
+
+    createPriceSearch = () => {
+      return (
+        <div class="search">
+          <div> 
+            <center><h3 class="search_title">Search Between Prices</h3></center>
+            <Form name="search_price" onSubmit={this.addValue}>
+                <center>
+                <input class="text_box" type="text" name="price_low" placeholder="Enter Low Price"  onChange={this.updateInput}/>
+                </center> 
+                <p></p>
+                <center>
+                <input class="text_box" type="text" name="price_high" placeholder="Enter High Price"  onChange={this.updateInput}/>
+                </center>     
+                <p></p>
+                <center><Button variant="primary" type="submit">Submit</Button></center>
+            </Form>
+            <br></br>
+          </div>
+        </div>
+      )
+    }
+
+
+
 
     render() {
       if(this.state.search_drink===true){
@@ -153,74 +215,13 @@ class App extends Component {
             {this.createNav()}
             <br></br>
             {this.createBarSearch()}
-
-            <Container>
-              <Row>
-                <Col></Col>
-                <Col xs={8}> 
-                  <div> 
-                    <center><h3>Search By Drink</h3></center>
-                    <Form name="search_drink" onSubmit={this.addValue}>              
-                      <Form.Group search_drink="formSearchDrink">
-                        <Form.Control type="text" name="drink_name" placeholder="Enter Name of Drink"  onChange={this.updateInput}/>
-                        <p></p>
-                        <center><Button variant="primary" type="submit">Submit</Button></center>
-                      </Form.Group>
-            </Form>
             <br></br>
-                  </div>
-                </Col>
-                <Col></Col>
-              </Row>
-            </Container>
-
-
-
-
-            <Container>
-              <Row>
-                <Col></Col>
-                <Col xs={8}>
-                <center><h3>Search By Category and Bar</h3> </center>
-                  <Form name="search_bar_cat" onSubmit={this.addValue}>              
-              <Form.Group search_bar_cat="formSearchBarCat">
-                <Form.Control type="text" name="category" placeholder="Enter Category of Drink" onChange={this.updateInput}/>
-                <p></p>
-                <Form.Control type="text" name="bar_name" placeholder="Enter Name of Bar" onChange={this.updateInput}/>
-                <p></p>
-                <center><Button variant="primary" type="submit">Submit</Button></center>
-                <br></br>
-              </Form.Group>
-            </Form>
-                </Col>
-                <Col></Col>
-              </Row>
-            </Container>
-
-
-
-            <Container>
-              <Row>
-                <Col></Col>
-                <Col xs={8}> 
-                <center><h3>Search Between Prices</h3></center>
-                  <Form name="search_price" onSubmit={this.addValue}>              
-                    <Form.Group search_price="formSearchPrice">
-                      <Form.Control type="text" name="price_low" placeholder="Enter Low Price" onChange={this.updateInput}/>
-                      <p></p>
-                      <Form.Control type="text" name="price_high" placeholder="Enter High Price" onChange={this.updateInput}/>
-                      <p></p>
-                      <center><Button variant="primary" type="submit">Submit</Button></center>
-                      <br></br>
-                      <br></br>
-                    </Form.Group>
-                  </Form>
-                  </Col>
-                  <Col></Col>
-                </Row>
-              </Container>
-
-
+            {this.createDrinkSearch()}
+            <br></br>
+            {this.createCatSearch()}
+            <br></br>
+            {this.createPriceSearch()}
+            <br></br>
 
             <Container>
               <center><h3>Bar List</h3></center>
