@@ -10,7 +10,7 @@
     "react-bootstrap-form": "^0.1.4-beta6",
     "react-dom": "^16.8.6",
     "react-native-elements": "^1.1.0",
-    "react-scripts": "3.0.1"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
